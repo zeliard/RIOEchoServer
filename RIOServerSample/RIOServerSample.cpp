@@ -179,7 +179,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		for (DWORD i = 0; i < g_sendRioBufTotalCount; ++i)
 		{
-			/// RIO operation에 맞도록 할당된 버퍼를 쪼개기
+			/// split g_sendRioBufs to SEND_BUFFER_SIZE for each RIO operation
 			EXTENDED_RIO_BUF* pBuffer = g_sendRioBufs + i;
 
 			pBuffer->operation = OP_SEND;
